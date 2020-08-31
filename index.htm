@@ -561,15 +561,15 @@
                         cost += movetype == "uMoveAttack" ? 8 : 6;
                     }
                 } else if (rand > 0.83) {
-                    var x = Math.floor(Math.random() * 2) + 2;
+                    var x = Math.floor(Math.random() * 4) - 2;
                     var y = Math.floor(Math.random() * 2) + 1;
                     if (x == 0 && y == 0) {
                         y++;
                     }
                     AddMovetype(movetype, 7 + x, 7 + y);
-                        AddMovetype(movetype, 7 - x, 7 + y);
-                        AddMovetype(movetype, 7 + x, 7 - y);
-                        AddMovetype(movetype, 7 - x, 7 - y);
+                    AddMovetype(movetype, 7 - x, 7 + y);
+                    AddMovetype(movetype, 7 + x, 7 - y);
+                    AddMovetype(movetype, 7 - x, 7 - y);
                     cost += Math.max(y, 0);
                 }
             }
