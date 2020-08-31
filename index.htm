@@ -201,6 +201,7 @@
             filter: blur(.75px);
             opacity: .75;
         }
+
     </style>
 
     <div style="display:none">
@@ -356,6 +357,7 @@
         .movetype.ability {
             background-color: #fff200;
         }
+
     </style>
 
     <script type="text/javascript">
@@ -554,19 +556,20 @@
                         }
                         AddMovetype(movetype, 7 + x, 7 + y);
                         AddMovetype(movetype, 7 - x, 7 + y);
+                        AddMovetype(movetype, 7 + x, 7 - y);
+                        AddMovetype(movetype, 7 - x, 7 - y);
                         cost += movetype == "uMoveAttack" ? 8 : 6;
                     }
                 } else if (rand > 0.83) {
                     var x = Math.floor(Math.random() * 2) + 2;
                     var y = Math.floor(Math.random() * 2) + 1;
-                    if (Math.random() > 0.5) {
-                        y = -y;
-                    }
                     if (x == 0 && y == 0) {
                         y++;
                     }
                     AddMovetype(movetype, 7 + x, 7 + y);
-                    AddMovetype(movetype, 7 - x, 7 + y);
+                        AddMovetype(movetype, 7 - x, 7 + y);
+                        AddMovetype(movetype, 7 + x, 7 - y);
+                        AddMovetype(movetype, 7 - x, 7 - y);
                     cost += Math.max(y, 0);
                 }
             }
@@ -665,6 +668,7 @@
             let data = await response.json();
             return data
         }
+
     </script>
 </head>
 
@@ -697,4 +701,6 @@
         (The blur is to be accurate to the game)
     </div>
 
-</body></html>
+</body>
+
+</html>
