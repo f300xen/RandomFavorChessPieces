@@ -19,6 +19,8 @@
         }
 
         .card {
+            pointer-events:none;
+            
             display: block;
             position: absolute;
 
@@ -153,9 +155,51 @@
             font-size: 125%;
             font-style: italic;
 
-            filter: blur(1px);
+            filter: blur(.75px);
         }
 
+        .plug {
+            display: block;
+            position: absolute;
+
+            left: calc(50% - 10rem);
+            top: .25rem;
+
+            padding: .25rem 0;
+            width: 20rem;
+
+            background-color: rgba(220, 210, 200, 1);
+            border: .4rem ridge #83471f;
+            box-sizing: border-box;
+
+            text-align: center;
+            text-decoration:none;
+            font-size:150%;
+            font-weight:700;
+            color:black;
+            
+            filter:blur(.75px);
+        }
+
+        .note {
+            pointer-events:none;
+            
+            display: block;
+            position: absolute;
+
+            left: calc(50% - 10rem);
+            top: calc(50% + 16rem);
+
+            padding: .25rem 0;
+            width: 20rem;
+
+            background-color: rgba(220, 210, 200, 1);
+            border: .4rem ridge #83471f;
+            box-sizing: border-box;
+
+            text-align: center;
+            filter: blur(.75px);
+        }
     </style>
 
     <div style="display:none">
@@ -198,8 +242,8 @@
         }
 
         .card .board .square .movetype {
-            filter:blur(.5px);
-            
+            filter: blur(.5px);
+
             display: block;
             position: relative;
 
@@ -285,7 +329,7 @@
             position: absolute;
 
             top: .3rem;
-            left:-1rem;
+            left: -1rem;
 
             height: 100%;
             width: 100%;
@@ -313,7 +357,6 @@
         .movetype.ability {
             background-color: #fff200;
         }
-
     </style>
 
     <script type="text/javascript">
@@ -623,11 +666,11 @@
             let data = await response.json();
             return data
         }
-
     </script>
 </head>
 
 <body onload="MakeBoard()">
+    <a class="plug" href="https://store.steampowered.com/app/1014920/Favor_Chess/">Link to Favor Chess</a>
 
     <div class="card">
         <div class="name">
@@ -651,6 +694,8 @@
         </div>
     </div>
 
-</body>
+    <div class="note">
+        (The blur is to be accurate to the game)
+    </div>
 
-</html>
+</body></html>
