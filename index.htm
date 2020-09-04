@@ -364,6 +364,10 @@
         var boardParent;
 
         function MakeBoard() {
+            var pieceImage = document.querySelector("#pieceImage");
+            var degrees = Math.random() * 360;
+            pieceImage.style.cssText = "transform: rotate(" + degrees + "deg)";
+
             boardParent = document.querySelector(".board");
             var squarePrefab = document.querySelector(".square");
 
@@ -682,7 +686,7 @@
         <div class="cost">
 
         </div>
-        <img src="Bee.png">
+        <img id="pieceImage" src="Bee.png">
         <div class="board">
 
         </div>
